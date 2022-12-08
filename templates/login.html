@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="container-fluid bg-primary  mt-5 my-5 py-5">
+    <div class="container py-5 mt-5">
+        <div class="bg-white text-center mt-5 rounded p-5">
+            {% for message in messages%}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Alert!</strong> {{message}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+            <h2 class="text-center">Admin Signup</h2>
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" class="form-control bg-light border-0 mt-4" name="uname" placeholder="User Name"
+                    style="height: 55px;">
+                <input type="password" class="form-control bg-light border-0 mt-4" name="pswd" placeholder="Password"
+                    style="height: 55px;">
+                <button class="btn btn-primary w-50 py-3 mt-5" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

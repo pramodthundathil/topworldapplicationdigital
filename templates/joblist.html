@@ -1,0 +1,140 @@
+{% extends "admin.html" %}
+{% block admincontent %}
+<style>
+.buttoncontainer{
+  width:500px;
+  margin: auto;
+  text-align: center;
+}
+</style>
+<div class="container">
+  {% for message in messages%}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Info!</strong> {{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+  <div class="buttoncontainer mt-5">
+    <button type="submit" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add New Job</button>
+    <button class="btn btn-dark" data-bs-toggle="modal-dialog" data-bs-target="#staticBackdrop1">View Jobs In List</button>
+  </div>
+</div>
+
+<h1 class="display-8 text-center mt-5 border-bottom">Job List</h1>
+<div class="container mt-5">
+  <div class="table-container1">
+    <table class="table table-striped table-light">
+      <thead>
+        <tr>
+
+          <th scope="col">Job Title</th>
+          <th scope="col">Comapny Name</th>
+          <th scope="col">Posted Date</th>
+          <th scope="col">Salary Range</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%for item in Alljobs%}
+        <tr>
+          <!-- <th scope="row" style="counter-reset: count;content: counter(count)"></th> -->
+          <td>{{item.JobTitle}}</td>
+          <td>{{item.CompanyName}}</td>
+          <td>{{item.PostedDate}}</td>
+          <td>{{item.Salary}}</td>
+          <td><a href="{%url 'AdminJobView' item.JobID%}" class="btn btn-dark">VIEW</a></td>
+        </tr>
+        {%endfor%}
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="container-fluid bg-dark text-light mt-5 py-5">
+  <div class="container py-5">
+    <div class="row g-5">
+      <div class="container-fluid bg-dark text-light border-top border-secondary py-4">
+        <div class="container">
+          <div class="row g-5">
+            <div class="col-md-6 text-center text-md-start">
+              <p class="mb-md-0">&copy; <a class="text-primary" href="{%url 'Signin' %}">TopWorld</a>. All Rights
+                Reserved.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <p class="mb-0">Designed by <a class="text-primary" href="#">Creative Team</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Add New Job</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="{%url 'AddJob'%}">
+          {% csrf_token %}
+          <div class="row g-3">
+            <div class="col-12 col-sm-6">
+              <input type="text" name="jtitle" class="form-control bg-light border-1" placeholder="Job Titile"
+                style="height: 55px;" required>
+            </div>
+            <div class="col-12 col-sm-6">
+              <input type="text" name="skills" class="form-control bg-light border-1" placeholder="Skills"
+                style="height: 55px;">
+
+            </div>
+            <div class="col-12 col-sm-6">
+              <input type="text" name="salary" class="form-control bg-light border-1" placeholder="Salary Range"
+                style="height: 55px;">
+
+            </div>
+            <div class="col-12 col-sm-6">
+              <input type="text" name="qlif" class="form-control bg-light border-1" placeholder="Qualification"
+                style="height: 55px;">
+            </div>
+            <div class="col-12 col-sm-6">
+              <input type="text" name="company" class="form-control bg-light border-1" placeholder="Company name"
+                style="height: 55px;">
+            </div>
+            <div class="col-12 col-sm-6">
+              <input type="text" class="form-control bg-light border-1" name="workt" placeholder="Work Timeing"
+                style="height: 55px;">
+            </div>
+            <div class="col-12 col-sm-6">
+              <input type="text" class="form-control bg-light border-1" name="experiance" placeholder="Experiance"
+                style="height: 55px;">
+            </div>
+            <div class="col-12 col-sm-6">
+              <input type="text" class="form-control bg-light border-1" name="location" placeholder="Work Location"
+                style="height: 55px;">
+            </div>
+            <div class="col-12">
+              <input type="text" name="dis" class="form-control bg-light border-1" placeholder="Discription" required
+                style="height: 100px;">
+              
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- xl modal -->
+
+{%endblock%}

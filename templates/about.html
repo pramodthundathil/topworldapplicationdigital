@@ -1,0 +1,202 @@
+{%extends 'index.html'%}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid py-5 mt-5" id="about">
+    <div class="container text-center mt-5">
+        <div class="row gx-5">
+            <div class="col-lg-12">
+                <div class="mb-4">
+                    <h5 class="d-inline-block text-primary border-bottom text-uppercase border-5">About Us</h5>
+                    <!-- <h1 class="display-9">Top World HR offers reliable expertise in all aspects of HR and people development.Our flexibility makes us different.</h1>  -->
+                </div>
+                <p>As recruitment experts in our industries of operation, offer consulting for companies and job-seekers seeking new opportunities for development. To take the first step towards finding that perfect connection for you, search our <a href="{%url 'AllJobs'%}">current job vacancies now.</a> 
+                </p>
+                <!-- <div class="row g-3 pt-3">
+                    <div class="col-sm-3 col-6">
+                        <div class="bg-light text-center rounded-circle py-4">
+                            <h6 class="mb-0">HR<small class="d-block text-primary">Services</small></h6>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-6">
+                        <div class="bg-light text-center rounded-circle py-4">
+                            <h6 class="mb-0">Job<small class="d-block text-primary">Search</small></h6>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-6">
+                        <div class="bg-light text-center rounded-circle py-4">
+                            <h6 class="mb-0">Employers<small class="d-block text-primary">Platform</small></h6>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-6">
+                        <div class="bg-light text-center rounded-circle py-4">
+                            <h6 class="mb-0">IT<small class="d-block text-primary">Solutions</small></h6>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- choose Start -->
+<div class="container-fluid py-5 mt-5" id="core-values">
+    <div class="container">
+        <div class="text-center mx-auto mb-5" style="max-width: 500px;">
+            <!-- <h5 class="d-inline-block text-primary text-uppercase border-5">Core Values</h5> -->
+            <h2 class="display-9">Why choose TopWorld HR?</h2>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6">
+                <div class=" rounded d-flex flex-column align-items-center  text-center">
+                    <img src="{%static 'icons/learning.png' %}" alt="" width="70px" height="auto"><br>
+
+                    <h4 class="mb-1">HR with a Difference</h4>
+                    <p >We take the time to get to know your business, designing processes and solutions that are a perfect fit.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class=" rounded d-flex flex-column align-items-center  text-center">
+
+                    <img src="{%static 'icons/support.png' %}" alt="" width="70px" height="auto"><br>
+
+                    <h4 class="mb-1">Consistent Support</h4>
+                    <p >Support from our HR team to cover employee holidays and absences, ensuring consistent HR services. </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="  rounded d-flex flex-column align-items-center  text-center">
+
+                    <img src="{%static 'icons/hr.png' %}" alt="" width="70px" height="auto"><br>
+
+                    <h4 class="mb-1">Independent & Objective HR</h4>
+                    <p >You can be guaranteed of conducting your business in a legal and professional manner. </p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div
+                    class=" rounded d-flex flex-column align-items-center  text-center">
+
+                    <img src="{%static 'icons/taem.png' %}" alt="" width="70px" height="auto"><br>
+
+                    <h4 class="mb-1"> An Expert Team By Your Side</h4>
+                    <p class="m-0">Our team of HR experts are all in-house, giving you the support you need, when you need it.</p>
+                    
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div
+                    class=" rounded d-flex flex-column align-items-center  text-center">
+
+                    <img src="{%static 'icons/flexible.png' %}" alt="" width="70px" height="auto"><br>
+
+                    <h4 class="mb-1">Flexible Services</h4>
+                    <p class="m-0"> We adapt our support and style of delivery to suit your individual business and culture.</p> 
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div
+                    class=" rounded d-flex flex-column align-items-center text-center">
+                    <img src="{%static 'icons/sustainable.png' %}" alt="" width="70px" height="auto"><br>
+
+                    <h4 class="mb-1">Cost Effective, Efficient & Sustainable</h4>
+                    <p class="m-0">Reduce financial and personnel overheads with HR service.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- choose End -->
+
+<!-- Core values Start -->
+<!-- <div class="container-fluid py-5" id="core-values">
+    <div class="container">
+        <div class="text-center mx-auto mb-5" style="max-width: 500px;">
+            <h5 class="d-inline-block text-primary text-uppercase border-5">Core Values</h5>
+            <h1 class="display-9">Connecting Great People and Great Organizations Together</h1>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6">
+                <div
+                    class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center">
+
+                    <img src="{%static 'icons/team.png' %}" alt="" width="70px" height="auto"><br>
+
+                    <h4 class="mb-5">Team Work</h4>
+                    <p class="m-0">Enjoy working together as a team</p>
+                    <a class="btn btn-lg btn-primary rounded-pill" href="">
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div
+                    class="service-item  rounded d-flex flex-column align-items-center justify-content-center text-center">
+                    <img src="{%static 'icons/quality.png' %}" alt="" width="70px" height="auto"><br>
+
+                    <h4 class="mb-5">Quality</h4>
+                    <p class="m-0">We Believe in quality </p>
+                    <a class="btn btn-lg btn-primary rounded-pill" href="">
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div
+                    class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center">
+                    <img src="{%static 'icons/performence.png' %}" alt="" width="70px" height="auto"><br>
+
+                    <h4 class="mb-3">Performance</h4><br>
+                    <p class="m-0">We measure results & reward achievement</p>
+                    <a class="btn btn-lg btn-primary rounded-pill" href="">
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div
+                    class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center">
+                    <img src="{%static 'icons/learning.png' %}" alt="" width="70px" height="auto"><br>
+
+                    <h4 class="mb-5"> Learning</h4>
+                    <p class="m-0">We constantly improve our knowledge & skills</p>
+                    <a class="btn btn-lg btn-primary rounded-pill" href="">
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div
+                    class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center">
+                    <img src="{%static 'icons/respect.png' %}" alt="" width="70px" height="auto"><br>
+
+                    <h4 class="mb-5">Respect</h4>
+                    <p class="m-0"> We treat all the people with equal respect.</p>
+                    <a class="btn btn-lg btn-primary rounded-pill" href="">
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div
+                    class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center">
+                    <img src="{%static 'icons/innovation.png' %}" alt="" width="70px" height="auto"><br>
+
+                    <h4 class="mb-5">Innovation</h4>
+                    <p class="m-0">We think ahead and offer new ideas.</p>
+                    <a class="btn btn-lg btn-primary rounded-pill" href="">
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- Services End -->
+
+
+  
+{% endblock %}

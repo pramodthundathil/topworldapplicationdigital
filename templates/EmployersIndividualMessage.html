@@ -1,0 +1,38 @@
+{%extends "admin.html"%}
+{% block admincontent %}
+
+<div class="container-fluid py-5 mt-5">
+    <div class="container">
+        {% for message in messages%}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Info!</strong> {{message}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+        <div class="row gx-5">
+
+            {% for msg in emessage %}
+            <div class="col-lg-4 mb-lg-0"></div>
+
+            <div class="col-lg-4 mb-lg-0">
+                <div class="mb-4">
+                    <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Employers Message</h5>
+                    <h5 >Organasation Name:</h5 ><h2 class="display-9">{{msg.OrganasationName}}</h2>
+                    <h5>Contact Number: {{msg.PhoneNumber}}</h5>
+                    <h5>Email ID: {{msg.EmailID}}</h5>
+                </div>
+                <h6>Message:</h6>
+                <p>{{msg.Message}}</p>
+                <!-- <a class="btn btn-primary rounded-pill py-3 px-5 me-3" href="">Find Doctor</a>
+                    <a class="btn btn-outline-primary rounded-pill py-3 px-5" href="">Read More</a> -->
+                <!-- <a href="{{appli.Document.url}}" class="btn btn-primary" target="_blank">Download Resume</a></td> -->
+                <a href="{%url 'DeleteEployersMsg' msg.EmpmassageID %}" onclick="alert('Your Data Was Deleted')" class="btn btn-danger">Delete Message</a>
+                
+            </div>
+            {%endfor%}
+            <div class="col-lg-4 mb-lg-0"></div>
+        </div>
+    </div>
+</div>
+  
+{% endblock %}

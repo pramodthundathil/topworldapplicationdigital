@@ -1,0 +1,96 @@
+{% extends "admin.html" %}
+{%block admincontent%}
+<style>
+    .input-color {
+        color: black;
+    }
+
+    .input-color input {
+        color: green;
+    }
+</style>
+
+<div class="container-fluid mt-5 pt-5 input-color">
+    <div class="container mt-5">
+        <div class="row justify-content-center position-relative">
+            <div class="col-lg-12 bg-dark">
+                <h1 class="text-primary text-center mt-3 display-9">Update Job</h1>
+                <div class="bg-white rounded p-5 m-5 mb-0">
+
+                    {% for job in myjob %}
+
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="row g-3">
+                            {% for message in messages%}
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>Info!</strong> {{message}}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                            {% endfor %}
+                            <div class="col-12 col-sm-6">
+                                <label for="jobtitle">Job Title:</label>
+                                <input type="text" class="form-control bg-light border-0" value="{{job.JobTitle}}"
+                                    name="jobtitle" placeholder="Job Title" style="height: 55px;">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <label for="company">Company Name:</label>
+                                <input type="text" name="company" class="form-control bg-light border-0"
+                                    value="{{job.CompanyName}}" placeholder="Company Name" style="height: 55px;">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <label for="salary">Salary:</label>
+                                <input type="text" name="salary" class="form-control bg-light border-0"
+                                    value="{{job.Salary}}" placeholder="Salary" style="height: 55px;">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <label for="worktime">Worktime:</label>
+                                <input type="text" name="worktime" class="form-control bg-light border-0"
+                                    value="{{job.WorkTime}}" placeholder="Work Time" style="height: 55px;">
+                            </div>
+
+                            <div class="col-12 col-sm-6">
+                                <label for="worktime">Experiance:</label>
+
+                                <input type="text" value="{{job.Experiance}}" class="form-control bg-light border-1"
+                                    name="experiance" placeholder="Experiance" style="height: 55px;">
+                            </div>
+
+                            <div class="col-12 col-sm-6">
+                                <label for="worktime">Work Location:</label>
+
+                                <input type="text" value="{{job.WorkLocation}}" class="form-control bg-light border-1"
+                                    name="location" placeholder="Work Location" style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <label for="skills">Skills:</label>
+                                <input type="text" name="skills" class="form-control bg-light border-0"
+                                    value="{{job.Skills}}" placeholder="Skills" style="height: 55px;">
+                            </div>
+
+                            <div class="col-12">
+                                <label for="qualification">Qualification:</label>
+                                <input type="text" name="qualification" class="form-control bg-light border-0"
+                                    value="{{job.Qualification}}" placeholder="Qualification" style="height: 55px;">
+                            </div>
+
+                            <div class="col-12">
+                                <label for="discription">Discription</label>
+                                <input type="text" name="discription" class="form-control bg-light border-0"
+                                    value="{{job.Discription}}" rows="5" style="height:200px" placeholder="Discription">
+                            </div>
+                            <div class="col-12 text-center">
+                                <button class="btn btn-dark w-50 py-3" type="submit">Update</button>
+                            </div>
+
+                        </div>
+                    </form>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <br><br>
+    </div>
+</div>
+{%endblock%}

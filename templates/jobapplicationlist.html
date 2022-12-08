@@ -1,0 +1,70 @@
+{%extends 'admin.html'%}
+{% block admincontent %}
+  <style>
+   
+  </style>
+
+<h1 class="display-8 text-center mt-5 border-bottom">Application List</h1>
+<div class="container mt-5">
+  <div class="table-container1">
+    <table class="table table-striped table-light">
+      <thead>
+        <tr>
+
+          <th scope="col">Job Title</th>
+          <th scope="col">Comapny Name</th>
+          <th scope="col">Applicant Name</th>
+          <th scope="col">Application Date</th>
+          <th>Resume</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%for application in applications%}
+        <tr>
+          <!-- <th scope="row" style="counter-reset: count;content: counter(count)"></th> -->
+          <td>{{application.JobTitle}}</td>
+          <td>{{application.Jobid.CompanyName}}</td>
+          <td>{{application.FirstName}} {{application.LastName}}</td>
+          <td>{{application.AppliedDate}}</td>
+          <td><a href="{{application.Document.url}}" target="_blank" class="btn btn-primary">Download</a></td>
+          <td><a href="{%url 'ApplicantView' application.ApplicationID %}" class="btn btn-dark">VIEW</a></td>
+        </tr>
+        {%endfor%}
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h1 class="display-8 text-center mt-5 border-bottom">Registed Application List</h1>
+<div class="container mt-5">
+  <div class="table-container1">
+    <table class="table table-striped table-light">
+      <thead>
+        <tr>
+
+          <th scope="col">Job Title</th>
+          <th scope="col">Applicant Name</th>
+          <th scope="col">Application Date</th>
+          <!-- <th>Resume</th> -->
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%for application in DropedResumes%}
+        <tr>
+          <!-- <th scope="row" style="counter-reset: count;content: counter(count)"></th> -->
+          <td>{{application.JobTitle}}</td>
+          <td>{{application.FirstName}} {{application.LastName}}</td>
+          <td>{{application.AppliedDate}}{{application.ApplicationID}}</td>
+          <!-- <td><a href="" class="btn btn-primary">Download</a></td> -->
+          <td><a href="{%url 'RegApplicantView' application.ApplicationID %}" class="btn btn-dark">VIEW</a></td>
+        </tr>
+        {%endfor%}
+
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

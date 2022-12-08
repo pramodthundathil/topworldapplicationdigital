@@ -1,0 +1,746 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>TopWorld</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="{%static 'img/Topworld_favicon.png' %}" rel="icon">
+
+    <!-- google icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    </script>
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{%static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{%static 'lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{%static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{%static 'css/style.css' %}" rel="stylesheet">
+    <style>
+        .new_addclass p {
+            font-size: small !important;
+        }
+
+        .underline-class {
+            width: 100%;
+            height: 0px;
+            border-top: .5px solid rgba(128, 128, 128, 0.5);
+            align-content: space-around;
+        }
+
+        .hovera a:hover {
+            color: #13C5DD !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid py-2 border-bottom d-none d-lg-block text-light">
+        <div class="container">
+            <div class="row hovera">
+                <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
+                    <div class="d-inline-flex align-items-center ">
+                        <a class="text-decoration-none text-body pe-3" href="callto:+971582961892">Have any questions ?
+                            <i class="bi bi-telephone me-2"></i>+971 582961892</a>
+                        <span class="text-body">|</span>
+                        <a class="text-decoration-none text-body px-3" href="mailto:contact@topworldhr.com"><i
+                                class="bi bi-envelope me-2"></i>contact@topworldhr.com</a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center text-lg-end">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="text-body px-2" target="_blank" href="https://www.facebook.com/topworldhr/">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="text-body px-2" href="">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a class="text-body px-2" href="">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a class="text-body px-2" target="_blank" href="https://www.instagram.com/topworldhr">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a class="text-body ps-2" href="">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top shadow-sm" id="navbar"
+        style="background-color: none !important;position:fixed;top:30px">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light py-3 py-lg-0">
+                <a href="{%url 'Index'%}" class="navbar-brand">
+                    <img src="{%static 'img/Topworld_logo.png' %}" alt="img" width="200px" height="auto">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="{%url 'Index'%}" class="nav-item nav-link active">HOME</a>
+                        <a href="{%url 'AboutPage' %}" class="nav-item nav-link">ABOUT US</a>
+                        <a href="{%url 'Services' %}" class="nav-item nav-link">OUR SERVICES</a>
+                        <a href="{%url 'AllJobs' %}" class="nav-item nav-link">CAREERS</a>
+                        <a href="{%url 'Index' %}#register" class="nav-item nav-link">REGISTER</a>
+                        <a href="{%url 'Contact' %}" class="nav-item nav-link">CONTACT US </a>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+    {% block content %}
+
+    <!-- Hero Start -->
+
+    <!-- <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <img src="{%static 'img/banner_new.jpg' %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block"> -->
+
+                    <!-- <h5>First slide label</h5>
+              <p>Some representative placeholder content for the first slide.</p> -->
+                <!-- </div>
+            </div> -->
+            <!-- <div class="carousel-item">
+                <img src="{%static 'img/banner-hr2.jpg' %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block"> -->
+                    <!-- <h5>Second slide label</h5>
+              <p>Some representative placeholder content for the second slide.</p> -->
+                <!-- </div>
+            </div> -->
+            <!-- <div class="carousel-item active">
+                <img src="{%static 'img/banner_new2.jpg' %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    {% for message in messages%}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>Info!</strong> {{message}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %} -->
+                    <!-- <h5>Third slide label</h5>
+              <p>Some representative placeholder content for the third slide.</p> -->
+                <!-- </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div> -->
+    <!-- <div class="container-fluid bg-primary py-5 mb-5 hero-header" style="background: url(img/img_test.jpeg) top right no-repeat;background-size: cover;">
+        <div class="container py-5">
+            <div class="row justify-content-start">
+                <div class="col-lg-8 text-center text-lg-start">
+                    <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5" style="border-color: rgba(256, 256, 256, .3) !important;color:#1D2A4D !important">Welcome To TOPWORLD</h5>
+                    <h1 class="display-3 text-white mb-md-4" style="color:#13C5DD !important;"><q>Connecting Great People and Great Organizations Together</q> </h1>
+                    <div class="pt-2">-->
+    <!-- <a href="" class="btn btn-light rounded-pill py-md-3 px-md-5 mx-2">Find Job</a> -->
+    <!--  <a href="" class="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2">Find Job</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Hero End -->
+
+    <!-- new hero carosel -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{%static 'img/banner_new2.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                {% for message in messages%}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Info!</strong> {{message}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="{%static 'img/banner-hr2.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="{%static 'img/banner_new.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <!-- end hero new -->
+
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5" id="about">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100 rounded" src="{%static 'img/img_test2.png' %}"
+                            style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="mb-4">
+                        <h5 class="d-inline-block text-primary border-bottom text-uppercase border-5">Welcome to Top
+                            World HR</h5>
+                        <h2 class="display-9">Top World HR offers reliable expertise in all aspects of HR and people
+                            development.</h2>
+                    </div>
+                    <p>Topworld is the leading HR consultancy in the UAE, connecting job seekers with employers looking
+                        to hire. We help professionals thrive and empower HR leaders to put people and culture at the
+                        heart of their business – creating a more progressive future, for everyone.
+                    </p>
+
+                    <div class="row g-3 pt-3">
+                        <div class="col-sm-3 col-6">
+                            <div class="bg-light text-center rounded-circle py-4">
+                                <h6 class="mb-0">HR<small class="d-block text-primary">Services</small></h6>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-6">
+                            <div class="bg-light text-center rounded-circle py-4">
+                                <h6 class="mb-0">Job<small class="d-block text-primary">Search</small></h6>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-6">
+                            <div class="bg-light text-center rounded-circle py-4">
+                                <h6 class="mb-0">Employers<small class="d-block text-primary">Platform</small></h6>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-6">
+                            <div class="bg-light text-center rounded-circle py-4">
+                                <h6 class="mb-0">IT<small class="d-block text-primary">Solutions</small></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="d-inline-block text-primary border-bottom text-uppercase border-5 text-center mt-5">Our
+                        Mission</h5>
+
+                    <p class="mt-3">Top World offers superior HR and recruiting expertise and solutions through a
+                        cohesive
+                        team of employees who value personal flexibility and the opportunity to contribute
+                        their best work.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+    <!-- Core values Start -->
+    <div class="container-fluid py-5" id="core-values">
+        <div class="container">
+            <div class="text-center mx-auto mb-5" style="max-width: 500px;">
+                <h5 class="d-inline-block text-primary border-bottom text-uppercase border-5">Core Values</h5>
+                <!-- <h1 class="display-9">Connecting Great People and Great Organizations Together</h1> -->
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center">
+
+                        <img src="{%static 'icons/team.png' %}" alt="" width="70px" height="auto"><br>
+
+                        <h4 class="mb-5">Team Work</h4>
+                        <p class="m-0">Enjoy working together as a team</p>
+                        <a class="btn btn-lg btn-primary rounded-pill" href="">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="service-item  rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <img src="{%static 'icons/quality.png' %}" alt="" width="70px" height="auto"><br>
+
+                        <h4 class="mb-5">Quality</h4>
+                        <p class="m-0">We Believe in quality </p>
+                        <a class="btn btn-lg btn-primary rounded-pill" href="">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <img src="{%static 'icons/performence.png' %}" alt="" width="70px" height="auto"><br>
+
+                        <h4 class="mb-3">Performance</h4><br>
+                        <p class="m-0">We measure results & reward achievement</p>
+                        <a class="btn btn-lg btn-primary rounded-pill" href="">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <img src="{%static 'icons/learning.png' %}" alt="" width="70px" height="auto"><br>
+
+                        <h4 class="mb-5"> Learning</h4>
+                        <p class="m-0">We constantly improve our knowledge & skills</p>
+                        <a class="btn btn-lg btn-primary rounded-pill" href="">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <img src="{%static 'icons/respect.png' %}" alt="" width="70px" height="auto"><br>
+
+                        <h4 class="mb-5">Respect</h4>
+                        <p class="m-0"> We treat all the people with equal respect.</p>
+                        <a class="btn btn-lg btn-primary rounded-pill" href="">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <img src="{%static 'icons/innovation.png' %}" alt="" width="70px" height="auto"><br>
+
+                        <h4 class="mb-5">Innovation</h4>
+                        <p class="m-0">We think ahead and offer new ideas.</p>
+                        <a class="btn btn-lg btn-primary rounded-pill" href="">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services End -->
+
+    <!-- RESUME drop Start -->
+    <div class="container-fluid bg-primary my-5 py-5" id="register">
+        <div class="container py-5">
+            <div class="row gx-5">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="mb-4">
+
+                        <!-- <h5 class="d-inline-block text-white text-uppercase border-bottom border-5">Upload Your CV</h5> -->
+                        <h1 class="display-4">We Help You to Find Better Job</h1>
+                    </div>
+                    <h5 class="text-white fw-normal">Register with us for a smoother job search process</h5>
+                    <a class="btn btn-dark rounded-pill py-3 mt-5 px-5 me-3" href="{%url 'AllJobs'%}">Find Job From
+                        Vacancy
+                        List</a>
+                    <!-- <a class="btn btn-outline-dark rounded-pill py-3 px-5" href="">Read More</a> -->
+                </div>
+                <div class="col-lg-6">
+                    <div class="bg-white text-center rounded p-5">
+                        <h1 class="mb-4">Register Here</h1>
+                        <form action="{%url 'ApplyJob'%}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control bg-light border-0" name="fname"
+                                        placeholder="First Name" style="height: 55px;" required>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control bg-light border-0" name="lname"
+                                        placeholder="Last Name" style="height: 55px;" required>
+
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" name="jobtitle" class="form-control bg-light border-0"
+                                        placeholder="Position Intrested for Applying" style="height: 55px;" required>
+
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="tel"  pattern="[0-9]{10,14}" title="Please enter the mobile number with specific country code(uae : 00971xxxxxxxxx, India : 0091xxxxxxxxxx, etc..)" class="form-control bg-light border-0"
+                                        placeholder="Phone Number" name="phone" style="height: 55px;" required>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="email" class="form-control bg-light border-0" name="email"
+                                        placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Please enter valid email address" style="height: 55px;" required>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <span style="font-size: 10px ;"> Upload Resume:(doc,pdf) </span>
+                                    <input type="file" class="" name="doc" placeholder="Upload resume"
+                                        style="height: 55px;" required>
+                                </div>
+                                <!-- <div class="col-12 col-sm-6">
+                                    <div class="time" id="time" data-target-input="nearest">
+                                        <input type="text"
+                                            class="form-control bg-light border-0 datetimepicker-input"
+                                            placeholder="Time" data-target="#time" data-toggle="datetimepicker" style="height: 55px;">
+                                    </div>
+                                </div> -->
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Resume drop End -->
+
+    <!-- Recent Job Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5" style="max-width: 500px;">
+                <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Hot jobs</h5>
+                <h1 class="display-9">Connecting Great People and Great Organizations Together</h1>
+            </div>
+            <div class="owl-carousel price-carousel position-relative new_addclass" style="padding: 0 45px 45px 45px;">
+                {%for item in Alljobs|slice:":5"%}
+                <div class="bg-light rounded text-center ">
+                    <div class="position-relative">
+                        <div class="position-absolute w-100 h-100 top-50 start-50 translate-middle rounded-top d-flex flex-column align-items-center justify-content-center"
+                            style="background: rgba(29, 42, 77, .8);">
+                        </div>
+                    </div>
+                    <div class="text-center py-5 ">
+                        <h6>{{item.JobTitle}}</h6>
+                        <p><strong>{{item.CompanyName}}</strong></p>
+                        <p style="width:auto; height:20px;overflow:hidden;">Skills: {{item.Skills}}</p>
+                        <p>Experiance: {{item.Experiance}}</p>
+                        <p>Work Location: {{item.WorkLocation}}</p>
+                        <p>Salary: {{item.Salary}}</p>
+                        <a href="{%url 'JobView' item.JobID %}" class="btn btn-primary rounded-pill py-3 px-5 my-2">View
+                            Job</a>
+                        <div class="underline-class">
+                            <p>Posted: -{{item.PostedDate}}</p>
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
+            </div>
+        </div>
+
+    </div>
+    <!-- Recent Job End -->
+
+    <!-- Employer Start -->
+    <!-- <div class="container-fluid bg-primary my-5 py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto mb-5" style="max-width: 500px;">
+                <h5 class="d-inline-block text-white text-uppercase border-bottom border-5">Find Employee</h5>
+                <h1 class="display-4 mb-4">Find a Right Employee for Your Organazation</h1>
+                <h5 class="text-white fw-normal">Please Drop your Requerment to us We will find the best Employee for
+                    You</h5>
+            </div>
+             <div class="mx-auto" style="width: 100%; max-width: 600px; height:auto"> 
+            <div class="input-group">
+                <input type="text" style="height:70px" class="form-control border-primary w-50"
+                    placeholder="Organazation Name">
+                <input type="text" style="height:70px" class="form-control border-primary w-50" placeholder="Email ID">
+
+               <button class="btn btn-dark border-0 w-25">Send</button> 
+            </div>
+            <div class="input-group">
+                <input type="text" style="height:70px" class="form-control border-primary w-50"
+                    placeholder="Contact Number">
+                <input type="text" style="height:70px" class="form-control border-primary w-50" placeholder="Message">
+
+                 <button class="btn btn-dark border-0 w-25">Send</button> 
+            </div>
+
+           <input type="text" style="height:70px" class="form-control border-primary w-50" placeholder="yourmail@email.com">
+                    <input type="text" style="height:70px" class="form-control border-primary w-50" placeholder="yourmail@email.com">
+            <a href="" class="btn btn-dark rounded-pill py-3 px-5 my-2">Submit</a>
+
+             <button class="btn btn-dark border-0 w-25">Send</button> 
+
+             </div>
+        </div>
+    </div> -->
+
+    <div class="container-fluid bg-primary my-5 py-5">
+        <div class="container py-5">
+            <div class="row gx-5">
+                <div class="col-lg-6">
+                    <div class="bg-white text-center rounded p-5">
+                        <h6 class="mb-4">Please Drop your Requerment to us We will find the best
+                            Employee for
+                            You</h6>
+                        <form action="{%url 'EMessage' %}" method="post">
+                            {% csrf_token %}
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-12">
+                                    <input type="text" name="organazation" class="form-control bg-light border-0"
+                                        placeholder="Organazation Name" required style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="tel"  pattern="[0-9]{10,14}" title="Please enter the mobile number with specific country code(uae : 00971xxxxxxxxx, India : 0091xxxxxxxxxx, etc..)" name="phone" class="form-control bg-light border-0"
+                                        placeholder="Contact Number" required style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Please enter valid email address" name="email" class="form-control bg-light border-0"
+                                        placeholder="Email" required style="height: 55px;">
+
+                                </div>
+
+                                <div class="col-12 col-sm-12">
+                                    <!-- <input type="text" name="message" class="form-control bg-light border-0"
+                                        placeholder="Message" style="height: 55px;"> -->
+                                    <textarea type="text" name="message" required class="form-control bg-light border-0" rows="5"
+                                        placeholder="Message" style="resize: none !important;"></textarea>
+
+                                </div>
+                                <!-- <div class="col-12 col-sm-6">
+                                    <div class="time" id="time" data-target-input="nearest">
+                                        <input type="text"
+                                            class="form-control bg-light border-0 datetimepicker-input"
+                                            placeholder="Time" data-target="#time" data-toggle="datetimepicker" style="height: 55px;">
+                                    </div>
+                                </div> -->
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="mb-4">
+
+                        <!-- <h5 class="d-inline-block text-white text-uppercase border-bottom border-5">Upload Your CV</h5> -->
+                        <h1 class="display-4">Find a Right Employee for Your Organazation</h1>
+                        <h5 class="text-white fw-normal">We would be happy to discuss your requirements. Get in touch
+                            with us today</h5>
+                    </div>
+                    <!-- <p class="text-white mb-5">Drop Your Resume Here</p> -->
+                    <!-- <a class="btn btn-dark rounded-pill py-3 px-5 me-3" href="">Find Job From Vacancy List</a> -->
+                    <!-- <a class="btn btn-outline-dark rounded-pill py-3 px-5" href="">Read More</a> -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Employer End -->
+
+    <!--All Job Start -->
+    <div class="container-fluid py-5" id="alljob">
+        <div class="container">
+            <div class="text-center mx-auto mb-5" style="max-width: 500px;">
+                <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Current Vacancies</h5>
+                <h1 class="display-4">Find Your Dream Job!!</h1>
+            </div>
+            <div class="row g-5">
+                {%for item in Alljobs|slice:":9"%}
+                <div class="col-xl-4 col-lg-6">
+                    <div class="bg-light rounded overflow-hidden">
+                        <div class="p-4">
+                            <h2 class="display-9" style="width:auto; height:40px;overflow:hidden;">{{item.JobTitle}}
+                            </h2>
+                            <h6>{{item.CompanyName}}</h6>
+                            <p style="width:auto; height:20px;overflow:hidden;">Skills:{{item.Skills}}</p>
+                            <p style="width:auto; height:20px;overflow:hidden;">Qualification: {{item.Qualification}}
+                            </p>
+                            <p>Work Location: {{item.WorkLocation}}</p>
+                            <p>Experiance: <strong>{{item.Experiance}}</strong></p>
+                            <p>Salary:<strong>{{item.Salary}}</strong> </p>
+                            <div class="oveflow-hidden" style="width:auto; height:70px;overflow:hidden;">
+                                <p class="m-0">{{item.Discription}}</p>
+                            </div>
+                            <a href="{%url 'JobView' item.JobID %}" class="btn btn-primary rounded-pill mt-3">View
+                                Job</a>
+
+                        </div>
+                        <div class="d-flex justify-content-between border-top p-4">
+                            <div class="d-flex align-items-center">
+                                <small>Posted on</small>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <small class="ms-3">{{item.PostedDate}}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
+                <div class="col-12 text-center">
+                    <a href="{%url 'AllJobs'%}" class="btn btn-primary py-3 px-5">See More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- All Job End -->
+    {% endblock %}
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light mt-5 py-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">
+                        Get In Touch</h4>
+                    <p class="mb-4"></p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>PO Box-859599,Frij
+                        Murar,Dubai,UAE</p>
+                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>contact@topworldhr.com</p>
+                    <p class="mb-0"><i class="fa fa-phone-alt text-primary me-3"></i>+971 582961892</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">
+                        Quick Links</h4>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-light mb-2" href="{%url 'Index'%}"><i class="fa fa-angle-right me-2"></i>Home</a>
+                        <a class="text-light mb-2" href="{%url 'AboutPage' %}"><i
+                                class="fa fa-angle-right me-2"></i>About Us</a>
+                        <a class="text-light mb-2" href="{%url 'Services'%}"><i class="fa fa-angle-right me-2"></i>Our
+                            Services</a>
+                        <a class="text-light mb-2" href="{%url 'AllJobs' %}"><i class="fa fa-angle-right me-2"></i>Careers</a>
+                        <a class="text-light mb-2" href="{%url 'Index'%}#core-values"><i class="fa fa-angle-right me-2"></i>Core
+                            Values</a>
+                        <a class="text-light" href="{%url 'Contact' %}"><i class="fa fa-angle-right me-2"></i>Contact
+                            Us</a>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-6">
+                    <!-- <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">Popular Links</h4>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Home</a>
+                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>About Us</a>
+                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Our Services</a>
+                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Meet The Team</a>
+                        <a class="text-light mb-2" href="#"><i class="fa fa-angle-right me-2"></i>Latest Blog</a>
+                        <a class="text-light" href="#"><i class="fa fa-angle-right me-2"></i>Contact Us</a>
+                    </div> -->
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">
+                        Newsletter</h4>
+                    <form action="">
+                        <div class="input-group">
+                            <input type="text" class="form-control p-3 border-0" placeholder="Your Email Address">
+                            <button class="btn btn-primary">Sign Up</button>
+                        </div>
+                    </form>
+                    <h6 class="text-primary text-uppercase mt-4 mb-3">Follow Us</h6>
+                    <div class="d-flex">
+                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" target="_blank" href="https://www.facebook.com/topworldhr/"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle" target="_blank" href="https://www.instagram.com/topworldhr"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark text-light border-top border-secondary py-4">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-md-0">&copy; <a class="text-primary" href="{%url 'Index' %}">TopWorld</a>. All Rights
+                        Reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Designed by <a class="text-primary" href="#">Creative Team</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{%static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{%static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{%static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{%static 'lib/tempusdominus/js/moment.min.js' %}"></script>
+    <script src="{%static 'lib/tempusdominus/js/moment-timezone.min.js' %}"></script>
+    <script src="{%static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+    <script src="{%static 'static/js/bootstrap.js]"></script>
+    <!-- Template Javascript -->
+    <script src="{%static 'js/main.js' %}"></script>
+    <script>
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                document.getElementById("navbar").style.backgroundColor = "rgba(255, 255, 255,.9)";
+                document.getElementById("navbar").style.position = "stickey";
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.backgroundColor = "rgba(255, 255, 255,.2)";
+                document.getElementById("navbar").style.position = "fixed";
+                document.getElementById("navbar").style.top = "30px";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+{% extends "admin.html" %}
+{% block admincontent %}
+
+
+<div class="container-fluid py-5 mt-5">
+    <div class="container">
+        {% for message in messages%}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Info!</strong> {{message}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+        {% for appli in application %}
+
+            <div class="col-lg-6 mb-lg-0">
+                <div class="mb-4">
+                    <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Applicant Profile</h5>
+                    <h5 >Applied Post:</h5 ><h2 class="display-9">{{appli.JobTitle}}</h2>
+                    <h5>Applicant First Name: {{appli.FirstName}}</h5>
+                    <h5>Applicant Last Name: {{appli.LastName}}</h5>
+                </div>
+
+                <h6>Phone Number: {{appli.PhoneNumber}}</h6>
+                <h6>Email Id: {{appli.EmailId}}</h6>
+                <p>Applied On: {{appli.AppliedDate}}</p>
+                <!-- <a class="btn btn-primary rounded-pill py-3 px-5 me-3" href="">Find Doctor</a>
+                    <a class="btn btn-outline-primary rounded-pill py-3 px-5" href="">Read More</a> -->
+                <a href="{{appli.Document.url}}" class="btn btn-primary" target="_blank">Download Resume</a></td>
+                <a href="{%url 'DeleteDropApplicant' appli.ApplicationID %}" onclick="alert('Your Data Was Deleted')" class="btn btn-danger">Delete Applicant</a>
+                
+            </div>
+
+{%endfor%}
+    </div>
+</div>
+  
+{% endblock  %}

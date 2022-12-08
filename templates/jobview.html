@@ -1,0 +1,90 @@
+{% extends "index.html" %}
+
+{% block content %}
+<!-- Jobview Start -->
+<div class="container-fluid py-5 mt-5">
+    <div class="container mt-5">
+        <div class="row gx-5">
+
+            {% for job in MyJob %}
+
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="mb-4">
+                    <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Job Profile</h5>
+                    <h2 class="display-9">{{job.JobTitle}}</h2>
+                    <h5>{{job.CompanyName}}</h5>
+
+                </div>
+                <p class="text-muted mb-5">{{job.Discription}}</p>
+                <h6>Qualification: {{job.Qualification}}</h6>
+                <h6>Skills: {{job.Skills}}</h6>
+                <h6>Experiance: {{job.Experiance}}</h6>
+                <h6>Work Location: {{job.WorkLocation}}</h6>
+                <h6>Salary:{{job.Salary}}</h6>
+                <p>Work: {{job.WorkTime}}</p>
+                <p>posted on: {{job.PostedDate}}</p>
+                <!-- <a class="btn btn-primary rounded-pill py-3 px-5 me-3" href="">Find Doctor</a>
+                    <a class="btn btn-outline-primary rounded-pill py-3 px-5" href="">Read More</a> -->
+            </div>
+            <div class="col-lg-6">
+                <div class="bg-light text-center rounded p-5">
+                    <h1 class="mb-4">Apply For This Job</h1>
+                    {% for message in messages%}
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>Info!</strong> {{message}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="row g-3">
+                            <div class="col-12 col-sm-6">
+                                <input type="text" name="fname" class="form-control bg-light border-1"
+                                    placeholder="First Name" required style="height: 55px;">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input type="text" name="lname" required class="form-control bg-light border-1"
+                                    placeholder="Last Name" style="height: 55px;">
+
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input type="text" name="jobtitle" class="form-control bg-light border-1"
+                                    value="{{job.JobTitle}}" style="height: 55px;" readonly>
+
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input type="tel" pattern="[0-9]{10,14}" name="phone" title="Please enter the mobile number with specific country code(uae : 00971xxxxxxxxx, India : 0091xxxxxxxxxx, etc..)" required class="form-control bg-light border-1"
+                                    placeholder="Phone Number" style="height: 55px;">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input type="email" name="email" required class="form-control bg-light border-1"
+                                    placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Please enter valid email address" style="height: 55px;">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <span style="font-size: 10px ;"> Upload Resume:(doc,pdf) </span>
+                                <input type="file" class="" required name="document" placeholder="Upload resume"
+                                    style="height: 55px;">
+                            </div>
+                            <!-- <div class="col-12 col-sm-6">
+                                    <div class="time" id="time" data-target-input="nearest">
+                                        <input type="text"
+                                            class="form-control bg-white border-0 datetimepicker-input"
+                                            placeholder="Time" data-target="#time" data-toggle="datetimepicker" style="height: 55px;">
+                                    </div>
+                                </div> -->
+                            <div class="col-12">
+                                <button value="{{job.JobID}}" name="jobid" class="btn btn-primary w-100 py-3"
+                                    type="submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+<!-- Jobview End -->
+{% endblock %}

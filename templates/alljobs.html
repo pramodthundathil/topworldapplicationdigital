@@ -1,0 +1,49 @@
+{%extends 'index.html'%}
+{%load static%}
+
+{% block content %}
+
+<!--All Job Start -->
+<div class="container-fluid mt-5 py-5" id="alljob">
+    <div class="container mt-5">
+        <div class="text-center mx-auto mb-5" style="max-width: 500px;">
+            <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Current Vacancies</h5>
+            <!-- <h1 class="display-4">Find your dream job</h1> -->
+        </div>
+        <div class="row g-5">
+            {%for item in Alljobs|slice:":9"%}
+            <div class="col-xl-4 col-lg-6">
+                <div class="bg-light rounded overflow-hidden">
+                    <div class="p-4">
+                    <h2 class="display-9" style="width:auto; height:40px;overflow:hidden;">{{item.JobTitle}}</h2>
+                    <h6>{{item.CompanyName}}</h6>
+                    <p style="width:auto; height:20px;overflow:hidden;">Skills:{{item.Skills}}</p>
+                    <p style="width:auto; height:20px;overflow:hidden;">Qualification: {{item.Qualification}}</p>
+                    <p>Salary: {{item.Salary}}</p>
+                        <div class="oveflow-hidden" style="width:auto; height:70px;overflow:hidden;">
+                            <p class="m-0">{{item.Discription}}</p>
+                        </div>
+                        <a href="{%url 'JobView' item.JobID %}" class="btn btn-primary rounded-pill mt-3">View Job</a>
+
+                    </div>
+                    <div class="d-flex justify-content-between border-top p-4">
+                        <div class="d-flex align-items-center">
+                            <small>Posted on</small>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <small class="ms-3">{{item.PostedDate}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+            <div class="col-12 text-center">
+                <h2>New vacancies are coming soon.......</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- All Job End -->
+    
+{% endblock %}
+    
