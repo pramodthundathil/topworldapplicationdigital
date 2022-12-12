@@ -13,11 +13,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 
 import os
-# import django_heroku
-
-import os
 import sys
 import dj_database_url
+# import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -33,7 +31,6 @@ SECRET_KEY = 'django-insecure-goh4!@4(4)r)sfe^l22om9(ro8%u^agtf&h%ztff90mesh2cpk
 DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
-
 
 
 
@@ -95,28 +92,13 @@ WSGI_APPLICATION = 'TopWorld.wsgi.application'
 #         'HOST': 'Localhost'
 #     }
 # }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
-
-
-if DEVELOPMENT_MODE is True:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-        }
-    }
-elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
-    if os.getenv("DATABASE_URL", None) is None:
-        raise Exception("DATABASE_URL environment variable not defined")
-    DATABASES = {
-        "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
-    }
+DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
+    "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -164,11 +146,10 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR,'static')
-#     ]
-# STATIC_ROOT = os.path.join(BASE_DIR,'newstatic')
-STATIC_ROOT = BASE_DIR / 'static' 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'static')
+    ]
+STATIC_ROOT = os.path.join(BASE_DIR,'newstatic')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
